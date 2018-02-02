@@ -9,5 +9,7 @@ This is primarily responsible for receiving data from the peripheral controllers
 This will consist of a simple menu to choose what controller you are using based on what peripherals the device has available to it (accellerometer, camera, mic), and the code that will actually send the signals through the WebSocket.
 ### ChucK
 [ChucK](http://chuck.cs.princeton.edu/) is going to actually be making the noise.  All of its input will come from the MIDI that the Node server is emitting and create the sounds on the master device.  ChucK is a live coding environment, so we will have a number of synthesizers saved, but that code can be modified on the fly to create totally unique sounds.  It will also provide some visualizations.
+### Initial wireframe
+![img_4247](https://user-images.githubusercontent.com/8572233/35753959-46ab540a-0827-11e8-989b-924d4a2f37f6.JPG)
 
 # CRAZY SOUNDS, PRETTY LIGHTS, INTERACTIVITY
