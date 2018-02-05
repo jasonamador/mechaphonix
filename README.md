@@ -15,7 +15,7 @@ This will consist of a simple menu to choose what controller you are using based
 ### DIY EEG tutorials
 We made our eeg device out of a Nurosky MindFlex toy and an arduino by following this tutorial: http://www.frontiernerds.com/brain-hack
 
-Other EEG devices should work similarly but will requier changes to mind-app.js to pulling your EGG's data.
+Other EEG devices should work similarly but will require changes to mind-app.js in order to recive your data from your EGG.
 
 ![img_4251](https://user-images.githubusercontent.com/8572233/35826225-bf4336dc-0a7d-11e8-8243-cfac2b832661.JPG)
 
