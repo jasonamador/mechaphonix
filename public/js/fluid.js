@@ -644,6 +644,8 @@ canvas.addEventListener('touchmove', (e) => {
 my customization
 */
 pointers.push(new pointerPrototype());
+pointers.push(new pointerPrototype());
+pointers.push(new pointerPrototype());
 function drawRed(x, y) {
     pointers[0].down = true;
     pointers[0].color = [0.8, 0.0, 0.0];
@@ -663,22 +665,22 @@ function drawGreen(x, y) {
     pointers[1].y = y;
 }
 function drawOrange(x, y) {
-    pointers[0].down = true;
-    pointers[0].color = [0.8, 0.5, 0.3];
-    pointers[0].moved = pointers[0].down;
-    pointers[0].dx = (x - pointers[0].x) * 10.0;
-    pointers[0].dy = (y - pointers[0].y) * 10.0;
-    pointers[0].x = x;
-    pointers[0].y = y;
+    pointers[2].down = true;
+    pointers[2].color = [0.8, 0.5, 0.3];
+    pointers[2].moved = pointers[2].down;
+    pointers[2].dx = (x - pointers[2].x) * 10.0;
+    pointers[2].dy = (y - pointers[2].y) * 10.0;
+    pointers[2].x = x;
+    pointers[2].y = y;
 }
 function drawBlue(x, y) {
-    pointers[1].down = true;
-    pointers[1].color = [0.0, 0.0, 0.8];
-    pointers[1].moved = pointers[1].down;
-    pointers[1].dx = (x - pointers[1].x) * 10.0;
-    pointers[1].dy = (y - pointers[1].y) * 10.0;
-    pointers[1].x = x;
-    pointers[1].y = y;
+    pointers[3].down = true;
+    pointers[3].color = [0.0, 0.0, 0.8];
+    pointers[3].moved = pointers[3].down;
+    pointers[3].dx = (x - pointers[3].x) * 10.0;
+    pointers[3].dy = (y - pointers[3].y) * 10.0;
+    pointers[3].x = x;
+    pointers[3].y = y;
 }
 
 canvas.addEventListener('mousedown', () => {

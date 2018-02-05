@@ -1,12 +1,12 @@
 /*
 LIGHT TRACKER
 */
+const socket = io();
 
 window.onload = function() {
   /*
   color getter
   */
-
   let video = document.getElementById('video');
   function getColorAt(webcam, x, y) {
     var canvas = document.createElement('canvas');
@@ -37,7 +37,6 @@ window.onload = function() {
   });
 
   var tracker = new tracking.ColorTracker(['red', 'green', 'orange', 'blue']);
-
   tracking.track('#video', tracker, { camera: true });
 
   tracker.on('track', function(event) {
@@ -46,24 +45,69 @@ window.onload = function() {
       let centery = rect.y + rect.width / 2;
 
       switch (rect.color) {
-        case "green" : {
+        case 'green' : {
           drawGreen(centerx, centery);
+          socket.emit('tracker data', {
+            color: 'green',
+            x: centerx / video.width,
+            y: centery / video.height
+          });
           break;
         }
-        case "red" : {
+        case 'red' : {
           drawRed(centerx, centery);
+          socket.emit('tracker data', {
+            color: 'red',
+            x: centerx / video.width,
+            y: centery / video.height
+          });
           break;
         }
-        case "orange" : {
+        case 'orange' : {
           drawOrange(centerx, centery);
+          socket.emit('tracker data', {
+            color: 'orange',
+            x: centerx / video.width,
+            y: centery / video.height
+          });
           break;
         }
-        case "blue" : {
+        case 'blue' : {
           drawBlue(centerx, centery);
+          socket.emit('tracker data', {
+            color: 'blue',
+            x: centerx / video.width,
+            y: centery / video.height
+          });
           break;
         }
-        default:
+        default: break;
       }
     });
+  });
+
+  /*
+  SOUNDS
+  */
+  let blueSynth = new Tone.PluckSynth().toMaster();
+  let redSynth = new Tone.PolySynth().toMaster();
+  let greenSynth = new Tone.MembraneSynth().toMaster();
+  let orangeSynth = new Tone.DuoSynth().toMaster();
+  blueSynth.volume = -6;
+  redSynth.volume = -6;
+  greenSynth.volume = -6;
+  orangeSynth.volume = -6;
+
+  socket.on('blue message', (message) => {
+    blueSynth.triggerAttackRelease(message.note, '4n');
+  });
+  socket.on('red message', (message) => {
+    redSynth.triggerAttackRelease(message.note, '4n');
+  });
+  socket.on('green message', (message) => {
+    greenSynth.triggerAttackRelease(message.note, '4n');
+  });
+  socket.on('orange message', (message) => {
+    orangeSynth.triggerAttackRelease(message.note, '4n');
   });
 };
