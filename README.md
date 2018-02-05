@@ -12,4 +12,9 @@ This will consist of a simple menu to choose what controller you are using based
 ### Initial wireframe
 ![img_4247](https://user-images.githubusercontent.com/8572233/35753959-46ab540a-0827-11e8-989b-924d4a2f37f6.JPG)
 
+### DIY EEG tutorials
+We made our eeg device out of a Nurosky MindFlex toy and an arduino by following this tutorial: http://www.frontiernerds.com/brain-hack
+
+Other EEG devices should work similarly but will requier changes to mind-app.js to pulling your EGG's data.
+
 # CRAZY SOUNDS, PRETTY LIGHTS, INTERACTIVITY
