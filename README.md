@@ -17,4 +17,6 @@ We made our eeg device out of a Nurosky MindFlex toy and an arduino by following
 
 Other EEG devices should work similarly but will requier changes to mind-app.js to pulling your EGG's data.
 
+![img_4251](https://user-images.githubusercontent.com/8572233/35826171-93f01eb4-0a7d-11e8-95ba-0d198b9feaf3.JPG)
+
 # CRAZY SOUNDS, PRETTY LIGHTS, INTERACTIVITY
