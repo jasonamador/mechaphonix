@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="display" class="app">
+      <h3>acceleration x:<h3>
+      <p>{{acceleration_x}}</p>
+      <h3>acceleration y:<h3>
+      <p>{{acceleration_y}}</p>
+      <h3>acceleration z:<h3>
+      <p>{{acceleration_z}}</p>
+      <h3>notes:<h3>
+      <p>{{notes}}</p>
+      <h3>context:<h3>
+      <p>{{context}}</p>
+    <div>
+
+    <button id='play' type="button" style="height:300px;width:300px">Play</button>
+
+    <p></p>
+
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="/assets/Tone.min.js"></script>
+    <script src="/assets/StartAudioContext.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/acc-script.js"></script>
+  </body>
+</html>
