@@ -1,6 +1,7 @@
 let phaser = new Tone.Phaser().toMaster();
 phaser.octaves.value = 5;
 let synth = new Tone.PolySynth().connect(phaser);
+synth.volume.value = -12;
 
 
 navigator.requestMIDIAccess()
@@ -11,6 +12,7 @@ navigator.requestMIDIAccess()
 
     for (var i = inputs.next(); i && !i.done; i = inputs.next()) {
       i.value.onmidimessage = (message) => {
+        console.log(message.data);
         let noteNumber = message.data[1];
         let note = Tone.Frequency(noteNumber, 'midi').toNote();
         let velocity = message.data[2];
@@ -27,13 +29,11 @@ navigator.requestMIDIAccess()
         if (message.data[0] === 176) {
           phaser.frequency.value = velocity / 7;
         }
-
-        console.log(message.data);
       }
     }
 
      access.onstatechange = function(e) {
        // Print information about the (dis)connected MIDI controller
-       console.log(e.port.name, e.port.manufacturer, e.port.state);
+       // console.log(e.port.name, e.port.manufacturer, e.port.state);
      };
   });
