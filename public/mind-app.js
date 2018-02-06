@@ -1,7 +1,7 @@
 const SerialPort = require('serialport');
 const Readline = SerialPort.parsers.Readline;
 // set the serial port bellow to whatever port your arduino is on
-const port = new SerialPort('/dev/tty.usbmodem1451');
+const port = new SerialPort('/dev/tty.usbmodem1411');
 const parser = new Readline();
 // set the host bellow to whatever port your server is listening on
 const socket = require('socket.io-client')('http://localhost:3000');
@@ -10,7 +10,7 @@ socket.on('connect', function(){
   port.pipe(parser);
   parser.on('data', function(raw) {
     eeg = raw.trim().split(',')
-
+    console.log('EEG')
     if (eeg.length == 11) {
       socket.emit('eeg input', {
         source: 'eeg',
