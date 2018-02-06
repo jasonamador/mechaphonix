@@ -89,34 +89,17 @@ window.onload = function() {
   /*
   SOUNDS
   */
-  let blue = {
-    source : new Tone.Noise('white'),
-    filter : new Tone.Filter(100),
-    panner : new Tone.Panner(),
-    init : function() {
-      this.volume = this.source.volume.value = -24;
-      this.cutoff = this.filter.frequency.value = 100,
-      this.pan = this.panner.pan.value;
-      this.source.chain(this.filter, this.panner, Tone.Master);
-    },
-    start : function() {
-      this.source.start();
-    }
-  }
-
+  let blueSynth = new Tone.PluckSynth().toMaster();
   let redSynth = new Tone.PolySynth().toMaster();
   let greenSynth = new Tone.MembraneSynth().toMaster();
   let orangeSynth = new Tone.DuoSynth().toMaster();
-  redSynth.volume.value = -24;
-  greenSynth.volume.value = -32;
-  orangeSynth.volume.value = -24;
-
-  blue.init();
-  blue.start();
+  blueSynth.volume = -10;
+  redSynth.volume = -10;
+  greenSynth.volume = -10;
+  orangeSynth.volume = -10;
 
   socket.on('blue message', (message) => {
-    blueSynth.cutoff = message.cutoff;
-    blueSynth.pan = message.pan;
+    blueSynth.triggerAttackRelease(message.note, '4n');
   });
   socket.on('red message', (message) => {
     redSynth.triggerAttackRelease(message.note, '4n');

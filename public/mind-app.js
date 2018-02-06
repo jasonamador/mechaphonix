@@ -11,7 +11,7 @@ socket.on('connect', function(){
   port.pipe(parser);
   parser.on('data', function(raw) {
     eeg = raw.trim().split(',')
-
+    console.log('EEG')
     if (eeg.length == 11) {
       console.log(eeg[3],eeg[4],eeg[5],eeg[6],eeg[7],eeg[8],eeg[9],eeg[10]);
       socket.emit('eeg input', {
