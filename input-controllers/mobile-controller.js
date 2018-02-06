@@ -38,7 +38,7 @@ module.exports = function(socket) {
       notes: notes
     })
 
-    socket.broadcast.emit('play master', {
+    socket.broadcast.emit('play composer', {
       notes: notes
     })
   })
