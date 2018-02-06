@@ -1,0 +1,8 @@
+canvas, video {
+  position: absolute;
+  top: 0px;
+}
+
+canvas {
+  opacity: 0.8;
+}
