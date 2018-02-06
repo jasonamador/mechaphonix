@@ -14,13 +14,10 @@ window.onload = function() {
   tracking.ColorTracker.registerColor('red', (r, g, b) => {
     return (g < 50 && r > 150 && b < 50);
   });
-  tracking.ColorTracker.registerColor('orange', (r, g, b) => {
-    return (g > 190 && r > 90 && b < 100);
-  });
   tracking.ColorTracker.registerColor('blue', (r, g, b) => {
     return (g < 100 && r < 100 && b > 130);
   });
-  var tracker = new tracking.ColorTracker(['red', 'green', 'orange', 'blue']);
+  var tracker = new tracking.ColorTracker(['red', 'green', 'blue']);
   tracking.track('#video', tracker, { camera: true });
 
   /*
@@ -36,7 +33,6 @@ window.onload = function() {
           case 'green' : drawGreen(x, y); break;
           case 'red' : drawRed(x, y); break;
           case 'blue' : drawBlue(x, y); break;
-          case 'orange' : drawOrange(x, y); break;
         };
         x = (canvas.width - x) / canvas.width;
         y = (canvas.height - y) / canvas.height;
