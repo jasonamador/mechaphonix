@@ -2,30 +2,51 @@ const socket = io()
 const polySynth = new Tone.PolySynth(8, Tone.Synth).toMaster();
 const context = new AudioContext();
 
-let alpha = 0;
-let beta = 0;
-let gamma = 0;
+// set previous variables and minimum degree change needed to emit a new message
+let prevAlpha = 180;
+let prevBeta = 180;
+let prevGamma = 0;
+let minimumDelta = 5;
+let unmuted = false
 
+// start audio context for mobile devices
 StartAudioContext(Tone.context, '#play')
 
+function toggleMute() {
+  unmuted = !unmuted
+  document.getElementById('play').innerHTML = unmuted? 'mute': 'unmute'
+}
+
+// establish socket connection
 socket.on('connect', function() {
+  // play the notes this device produced
   socket.on('play self', function(data){
     console.log(data);
-    polySynth.triggerAttackRelease(data.notes, "2n");
+    if (unmuted) polySynth.triggerAttackRelease(data.notes, "2n");
   })
 
+  // react to changes in device orientation
   window.ondeviceorientation = function(event) {
-    if ((Math.abs(event.alpha - alpha) < 5 ||
-        Math.abs(event.alpha + 360 - alpha) < 5) &&
-        (Math.abs(event.beta - beta) < 5 ||
-        Math.abs(event.beta + 360 - beta)) < 5 &&
-        (Math.abs(event.gamma - gamma) < 5 ||
-        Math.abs(event.gamma + 180 - gamma)) < 5
+    // adjust raw values so the device starts out in the middle of the range
+    let alpha = (event.alpha + 180) % 360
+    let beta = (event.beta + 180) % 360
+    let gamma = event.gamma
+
+    // if the divece has not rotated the minimum degrees from the last position, don't continue
+    if ((Math.abs(alpha - prevAlpha) < minimumDelta ||
+        Math.abs(alpha + 360 - prevAlpha) < minimumDelta) &&
+        (Math.abs(beta - prevBeta) < minimumDelta ||
+        Math.abs(beta + 360 - prevBeta)) < minimumDelta &&
+        (Math.abs(gamma - prevGamma) < minimumDelta ||
+        Math.abs(gamma + 180 - prevGamma)) < minimumDelta
     ) return
 
-    alpha = event.alpha
-    beta = event.beta
-    gamma = event.gamma
+    // set the previous values to the current values
+    prevAlpha = alpha
+    prevBeta = beta
+    prevGamma = gamma
+
+    // emit a message to the server containing the new position data
     socket.emit('phone input', {
       alpha: alpha,
       beta: beta,
