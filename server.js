@@ -3,12 +3,18 @@ const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
+// setup input controllers
+const mobileController = require('./input-controllers/mobile-controller.js')
+
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/public/index.html');
 });
 
+app.get('/master', function(req, res){
+  res.sendFile(__dirname + '/public/master.html');
+});
 
 // function to translate raw acceleration data into notes for tone.js
 function getNote(number) {
@@ -62,48 +68,25 @@ let prevNote = '';
 
 // the code below creates a new socket for every connection to the server socket, so socket refers to whatever device made the connection.
 io.on('connection', function(socket){
-  socket.on('eeg data', function(eeg){
-    let notes = [
-      getNote(eeg.delta),
-      getNote(eeg.theta),
-      getNote(eeg.lowAlpha),
-      getNote(eeg.highAlpha),
-      getNote(eeg.lowBeta),
-      getNote(eeg.highBeta),
-      getNote(eeg.lowGamma),
-      getNote(eeg.highGamma)
-    ]
+  console.log('connected');
+  mobileController(socket)
 
-    socket.broadcast.emit('play', {
-      notes: notes
-    })
-  });
-
-  socket.on('acceleration data', function(acceleration){
-    let notes = [
-      getNote(acceleration.x),
-      getNote(acceleration.y),
-      getNote(acceleration.z)
-    ]
-
-    socket.broadcast.emit('play', {
-      notes: notes
-    })
-  });
-
-  socket.on('tracker data', (message) => {
-    let note = notes[scalePattern[degrees[Math.floor(message.x * 7)]] + Math.floor(message.y * 5)];
-    if (note != prevNote) {
-      prevNote = note;
-      switch(message.color) {
-        case 'blue': socket.emit('blue message', {note}); break;
-        case 'red': socket.emit('red message', {note}); break;
-        case 'green': socket.emit('green message', {note}); break;
-        case 'orange': socket.emit('orange message', {note}); break;
-        default: break;
-      }
-    }
-  });
+  // socket.on('eeg data', function(eeg){
+  //   let notes = [
+  //     getNote(eeg.delta),
+  //     getNote(eeg.theta),
+  //     getNote(eeg.lowAlpha),
+  //     getNote(eeg.highAlpha),
+  //     getNote(eeg.lowBeta),
+  //     getNote(eeg.highBeta),
+  //     getNote(eeg.lowGamma),
+  //     getNote(eeg.highGamma)
+  //   ]
+  //
+  //   socket.broadcast.emit('play', {
+  //     notes: notes
+  //   })
+  // });
 });
 
 http.listen(3000, function(){
