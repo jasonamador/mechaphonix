@@ -41,4 +41,19 @@ module.exports = function(socket) {
       notes: notes
     })
   })
+
+  socket.on('impact input', function(data){
+    console.log(data);
+    let notes = [
+      getNote(0)
+    ]
+
+    socket.emit('play self', {
+      notes: notes
+    })
+
+    socket.broadcast.emit('play composer', {
+      notes: notes
+    })
+  })
 }
