@@ -1,37 +1,36 @@
 function getNote(number) {
-  if (number > 340) return 'd5'
-  if (number > 320) return 'c5'
-  if (number > 300) return 'b5'
-  if (number > 280) return 'a5'
-  if (number > 260) return 'g4'
-  if (number > 240) return 'f4'
-  if (number > 220) return 'e4'
-  if (number > 200) return 'd4'
-  if (number > 180) return 'c4'
-  if (number > 160) return 'b3'
-  if (number > 140) return 'a3'
-  if (number > 120) return 'g3'
-  if (number > 100) return 'f3'
-  if (number > 80) return 'e3'
-  if (number > 60) return 'd3'
-  if (number > 40) return 'c3'
-  if (number > 20) return 'b2'
-  if (number > 0) return 'a2'
-  if (number > -20) return 'g2'
-  if (number > -40) return 'f2'
-  if (number > -60) return 'e2'
-  if (number > -80) return 'd2'
-  return 'c2'
+  if (number > 382.5) return 'b5'
+  if (number > 360) return 'a5'
+  if (number > 337.5) return 'g4'
+  if (number > 315) return 'f4'
+  if (number > 292.5) return 'e4'
+  if (number > 270) return 'd4'
+  if (number > 247.5) return 'c4'
+  if (number > 225) return 'b3'
+  if (number > 202.5) return 'a3'
+  if (number > 180) return 'g3'
+  if (number > 157.5) return 'f3'
+  if (number > 135) return 'e3'
+  if (number > 112.5) return 'd3'
+  return 'c3'
+
+}
+
+function getHarmony(base, harmony) {
+  if (Math.abs(harmony) > 67.5) return getNote((base + 120))
+  if (Math.abs(harmony) > 45) return getNote((base + 80))
+  if (Math.abs(harmony) > 22.5) return getNote((base + 40))
+  return getNote(base)
 }
 
 module.exports = function(socket) {
   console.log('set up socket');
-  socket.on('phone input', function(data){
+  socket.on('orientation input', function(data){
     console.log(data);
     let notes = [
-      getNote(data.alpha),
+      // getNote(data.alpha),
       getNote(data.beta),
-      getNote(data.gamma)
+      getHarmony(data.beta, data.gamma)
     ]
 
     socket.emit('play self', {

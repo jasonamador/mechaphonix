@@ -6,7 +6,7 @@ const context = new AudioContext();
 let prevAlpha = 180;
 let prevBeta = 180;
 let prevGamma = 0;
-let minimumDelta = 5;
+let minimumDelta = 22.5;
 let unmuted = false
 
 // start audio context for mobile devices
@@ -47,7 +47,7 @@ socket.on('connect', function() {
     prevGamma = gamma
 
     // emit a message to the server containing the new position data
-    socket.emit('phone input', {
+    socket.emit('orientation input', {
       alpha: alpha,
       beta: beta,
       gamma: gamma

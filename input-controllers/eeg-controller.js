@@ -39,14 +39,14 @@ module.exports = function(socket) {
   socket.on('eeg input', function(data){
     console.log(data);
     let notes = [
-      getNote(data.delta),
-      getNote(data.theta),
-      getNote(data.lowAlpha),
-      getNote(data.highAlpha),
-      getNote(data.lowBeta),
-      getNote(data.highBeta),
-      getNote(data.lowGamma),
-      getNote(data.highGamma)
+      getNote(data.delta)
+      // getNote(data.theta)
+      // getNote(data.lowAlpha),
+      // getNote(data.highAlpha),
+      // getNote(data.lowBeta),
+      // getNote(data.highBeta),
+      // getNote(data.lowGamma),
+      // getNote(data.highGamma)
     ]
 
     socket.emit('play self', {
