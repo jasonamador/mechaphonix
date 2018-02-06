@@ -51,14 +51,7 @@ module.exports = function(socket) {
     console.log((data.delta + data.theta)/2)
     let notes = [
       getNote((parseInt(data.delta) + parseInt(data.theta) + parseInt(data.highGamma) + parseInt(data.lowGamma))/2),
-
-      // getNote(data.theta),
-       getNote((parseInt(data.lowAlpha) + parseInt(data.highAlpha) + parseInt(data.highGamma))/3),
-      // getNote(data.highAlpha),
-      // getNote((parseInt(data.lowBeta) + parseInt(data.highBeta) + parseInt(data.lowGamma))/3),
-      // getNote(data.highBeta),
-       //getNote((parseInt(data.lowGamma) + parseInt(data.highGamma))/2),
-      // getNote(data.highGamma)
+      getNote((parseInt(data.lowAlpha) + parseInt(data.highAlpha) + parseInt(data.highGamma))/3),
     ]
       console.log(notes)
     socket.emit('play self', {

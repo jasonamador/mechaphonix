@@ -6,8 +6,10 @@ const context = new AudioContext();
 let prevAlpha = 180;
 let prevBeta = 180;
 let prevGamma = 0;
-let minimumDelta = 5;
+let minimumDelta = 22.5;
 let unmuted = false
+let tone = true
+let minimumImpact = 2
 
 // start audio context for mobile devices
 StartAudioContext(Tone.context, '#play')
@@ -15,6 +17,11 @@ StartAudioContext(Tone.context, '#play')
 function toggleMute() {
   unmuted = !unmuted
   document.getElementById('play').innerHTML = unmuted? 'mute': 'unmute'
+}
+
+function toggleInstrument() {
+  tone = !tone
+  document.getElementById('tone').innerHTML = tone? 'drum': 'tone'
 }
 
 // establish socket connection
@@ -33,12 +40,13 @@ socket.on('connect', function() {
     let gamma = event.gamma
 
     // if the divece has not rotated the minimum degrees from the last position, don't continue
-    if ((Math.abs(alpha - prevAlpha) < minimumDelta ||
+    if (!tone ||
+        ((Math.abs(alpha - prevAlpha) <    minimumDelta ||
         Math.abs(alpha + 360 - prevAlpha) < minimumDelta) &&
         (Math.abs(beta - prevBeta) < minimumDelta ||
         Math.abs(beta + 360 - prevBeta)) < minimumDelta &&
         (Math.abs(gamma - prevGamma) < minimumDelta ||
-        Math.abs(gamma + 180 - prevGamma)) < minimumDelta
+        Math.abs(gamma + 180 - prevGamma)) < minimumDelta)
     ) return
 
     // set the previous values to the current values
@@ -47,10 +55,30 @@ socket.on('connect', function() {
     prevGamma = gamma
 
     // emit a message to the server containing the new position data
-    socket.emit('phone input', {
+    socket.emit('orientation input', {
       alpha: alpha,
       beta: beta,
       gamma: gamma
+    })
+  };
+
+  // react to changes in device acceleration
+  window.ondevicemotion = function(event) {
+    // get acceleration data
+    let accelerationX = event.acceleration.x;
+    let accelerationY = event.acceleration.y;
+    let accelerationZ = event.acceleration.z;
+
+    // if impact not high enough, stop
+    if (tone ||
+        (Math.abs(accelerationX) <    minimumImpact) ||
+        (Math.abs(accelerationY) < minimumImpact) ||
+        (Math.abs(accelerationZ) < minimumImpact)
+    ) return
+
+    // emit a message to the server containing the new position data
+    socket.emit('impact input', {
+      impact: true
     })
   };
 });
