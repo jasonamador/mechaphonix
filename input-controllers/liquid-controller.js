@@ -6,10 +6,12 @@ let prevNote = '';
 module.exports = function(socket) {
   socket.on('tracker data', (message) => {
       let note = notes[scalePattern[degrees[Math.floor(message.x * 7)]] + Math.floor(message.y * 5)];
-      if (note != prevNote) {
+      let pan = message.x * 2 - 1;
+      let cutoff = message.y * 800;
+      if (true) {
         prevNote = note;
         switch(message.color) {
-          case 'blue': socket.emit('blue message', {note}); break;
+          case 'blue': socket.emit('blue message', {pan, cutoff}); break;
           case 'red': socket.emit('red message', {note}); break;
           case 'green': socket.emit('green message', {note}); break;
           case 'orange': socket.emit('orange message', {note}); break;
