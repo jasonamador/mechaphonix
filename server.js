@@ -6,7 +6,6 @@ const io = require('socket.io')(http);
 // setup input controllers
 const mobileController = require('./input-controllers/mobile-controller.js')
 const eegController = require('./input-controllers/eeg-controller.js')
-const liquidController = require('./input-controllers/liquid-controller.js')
 
 app.use(express.static(__dirname + '/public'));
 
@@ -23,7 +22,10 @@ io.on('connection', function(socket){
   console.log('connected')
   mobileController(socket)
   eegController(socket)
-  liquidController(socket);
+
+  socket.on('liquid-1 message', (message) => {
+    socket.emit('liquid-1 message', message);
+  });
 });
 
 http.listen(3000, function(){
