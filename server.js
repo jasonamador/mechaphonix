@@ -32,6 +32,11 @@ io.on('connection', function(socket){
     // socket.emit('liquid-1 message', message);
     socket.broadcast.emit('liquid-1 message', message);
   });
+
+  socket.on('sequencer message', (message => {
+    // socket.emit('sequencer message', message);
+    socket.broadcast.emit('sequencer message', message);
+  }));
 });
 
 http.listen(3000, function(){

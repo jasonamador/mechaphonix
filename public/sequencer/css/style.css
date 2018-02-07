@@ -9,6 +9,15 @@
   margin: 1px;
 }
 
-.cell.on {
-  background: green;
+.cell.strength-0 {
+  background: white;
+}
+.cell.strength-1 {
+  background: yellow;
+}
+.cell.strength-2 {
+  background: orange;
+}
+.cell.strength-3 {
+  background: red;
 }
