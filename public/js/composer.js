@@ -1,10 +1,10 @@
 const socket = io()
 const polySynth = new Tone.PolySynth(8, Tone.Synth).toMaster();
-const context = new AudioContext();
 
 socket.on('connect', function() {
-  socket.on('play composer', function(data){
-    console.log(data);
+  console.log('conected');
+  socket.on('play notes master', function(data){
+    console.log('playing notes:', data);
     polySynth.triggerAttackRelease(data.notes, "2n");
   })
 });
