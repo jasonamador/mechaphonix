@@ -19,6 +19,7 @@
   "homepage": "https://github.com/jasonamador/mechaphonix#readme",
   "dependencies": {
     "angular": "^1.6.9",
+    "ejs": "^2.5.7",
     "express": "^4.16.2",
     "serialport": "^6.0.5",
     "socket.io": "^2.0.4",

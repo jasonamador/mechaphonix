@@ -1,0 +1,14 @@
+.row {
+  display: flex;
+}
+.cell {
+  width: calc(100% / 16);
+  height: 20px;
+  border-radius: 3px;
+  border: 1px solid black;
+  margin: 1px;
+}
+
+.cell.on {
+  background: green;
+}
