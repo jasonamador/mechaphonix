@@ -1,0 +1,10 @@
+# Uncomment the next line to define a global platform for your project
+use_frameworks!
+source 'https://github.com/CocoaPods/Specs.git'
+project 'Mechaphonix.xcodeproj'
+platform :ios, '11.2'
+
+target 'Mechaphonix' do
+    pod 'Alamofire', '~> 4.5'
+    pod 'Socket.IO-Client-Swift', '~> 13.1.0'
+end

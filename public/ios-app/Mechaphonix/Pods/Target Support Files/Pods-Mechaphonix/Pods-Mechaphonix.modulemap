@@ -1,0 +1,6 @@
+framework module Pods_Mechaphonix {
+  umbrella header "Pods-Mechaphonix-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,1013 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		28D40427202B41DA00AF7729 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D40426202B41DA00AF7729 /* AppDelegate.swift */; };
+		28D40429202B41DA00AF7729 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D40428202B41DA00AF7729 /* ViewController.swift */; };
+		28D4042C202B41DA00AF7729 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D4042A202B41DA00AF7729 /* Main.storyboard */; };
+		28D4042E202B41DA00AF7729 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28D4042D202B41DA00AF7729 /* Assets.xcassets */; };
+		28D40431202B41DA00AF7729 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D4042F202B41DA00AF7729 /* LaunchScreen.storyboard */; };
+		28D4043C202B41DA00AF7729 /* MechaphonixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4043B202B41DA00AF7729 /* MechaphonixTests.swift */; };
+		28D40447202B41DA00AF7729 /* MechaphonixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D40446202B41DA00AF7729 /* MechaphonixUITests.swift */; };
+		28D4044C202B41DA00AF7729 /* Mechaphonix WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 28D4044B202B41DA00AF7729 /* Mechaphonix WatchKit App.app */; };
+		28D40452202B41DA00AF7729 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D40450202B41DA00AF7729 /* Interface.storyboard */; };
+		28D40454202B41DA00AF7729 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28D40453202B41DA00AF7729 /* Assets.xcassets */; };
+		28D4045B202B41DA00AF7729 /* Mechaphonix WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 28D4045A202B41DA00AF7729 /* Mechaphonix WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		28D40460202B41DA00AF7729 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4045F202B41DA00AF7729 /* InterfaceController.swift */; };
+		28D40462202B41DA00AF7729 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D40461202B41DA00AF7729 /* ExtensionDelegate.swift */; };
+		28D40464202B41DA00AF7729 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D40463202B41DA00AF7729 /* NotificationController.swift */; };
+		28D40466202B41DA00AF7729 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28D40465202B41DA00AF7729 /* Assets.xcassets */; };
+		28D4047F202B5E8300AF7729 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D4047E202B5E8300AF7729 /* HealthKit.framework */; };
+		28D40482202B5E9400AF7729 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D40481202B5E9400AF7729 /* HealthKit.framework */; };
+		A97B84B069DA2950CEE05532 /* Pods_Mechaphonix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDA9AA39F2F5DE66827BBBB /* Pods_Mechaphonix.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		28BB77C4202BA158002E8B21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28BB77BF202BA158002E8B21 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CE4C7181E09BD641AC3A0F99C0CA79E4;
+			remoteInfo = Alamofire;
+		};
+		28BB77C6202BA158002E8B21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28BB77BF202BA158002E8B21 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 12C2B946247BEDA425742EB459FED8A8;
+			remoteInfo = "Pods-Mechaphonix";
+		};
+		28D40438202B41DA00AF7729 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28D4041B202B41DA00AF7729 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 28D40422202B41DA00AF7729;
+			remoteInfo = Mechaphonix;
+		};
+		28D40443202B41DA00AF7729 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28D4041B202B41DA00AF7729 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 28D40422202B41DA00AF7729;
+			remoteInfo = Mechaphonix;
+		};
+		28D4044D202B41DA00AF7729 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28D4041B202B41DA00AF7729 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 28D4044A202B41DA00AF7729;
+			remoteInfo = "Mechaphonix WatchKit App";
+		};
+		28D4045C202B41DA00AF7729 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28D4041B202B41DA00AF7729 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 28D40459202B41DA00AF7729;
+			remoteInfo = "Mechaphonix WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		28D4046E202B41DA00AF7729 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				28D4045B202B41DA00AF7729 /* Mechaphonix WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28D40472202B41DA00AF7729 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				28D4044C202B41DA00AF7729 /* Mechaphonix WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		28BB77BF202BA158002E8B21 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
+		28D40423202B41DA00AF7729 /* Mechaphonix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mechaphonix.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		28D40426202B41DA00AF7729 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		28D40428202B41DA00AF7729 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		28D4042B202B41DA00AF7729 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		28D4042D202B41DA00AF7729 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		28D40430202B41DA00AF7729 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		28D40432202B41DA00AF7729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28D40437202B41DA00AF7729 /* MechaphonixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MechaphonixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		28D4043B202B41DA00AF7729 /* MechaphonixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MechaphonixTests.swift; sourceTree = "<group>"; };
+		28D4043D202B41DA00AF7729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28D40442202B41DA00AF7729 /* MechaphonixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MechaphonixUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		28D40446202B41DA00AF7729 /* MechaphonixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MechaphonixUITests.swift; sourceTree = "<group>"; };
+		28D40448202B41DA00AF7729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28D4044B202B41DA00AF7729 /* Mechaphonix WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mechaphonix WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		28D40451202B41DA00AF7729 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		28D40453202B41DA00AF7729 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		28D40455202B41DA00AF7729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28D4045A202B41DA00AF7729 /* Mechaphonix WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Mechaphonix WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		28D4045F202B41DA00AF7729 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		28D40461202B41DA00AF7729 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		28D40463202B41DA00AF7729 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		28D40465202B41DA00AF7729 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		28D40467202B41DA00AF7729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28D40468202B41DA00AF7729 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		28D4047C202B5E8300AF7729 /* Mechaphonix.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mechaphonix.entitlements; sourceTree = "<group>"; };
+		28D4047E202B5E8300AF7729 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		28D40480202B5E9400AF7729 /* Mechaphonix WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mechaphonix WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		28D40481202B5E9400AF7729 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		5FDA9AA39F2F5DE66827BBBB /* Pods_Mechaphonix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mechaphonix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74483A5A68ECF06DCA19F822 /* Pods-Mechaphonix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mechaphonix.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mechaphonix/Pods-Mechaphonix.release.xcconfig"; sourceTree = "<group>"; };
+		AABEB8C60EEBB1F80729DBE0 /* Pods-Mechaphonix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mechaphonix.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mechaphonix/Pods-Mechaphonix.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		01B48A01FF52A9708D597D51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28D40420202B41DA00AF7729 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28D4047F202B5E8300AF7729 /* HealthKit.framework in Frameworks */,
+				A97B84B069DA2950CEE05532 /* Pods_Mechaphonix.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28D40434202B41DA00AF7729 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28D4043F202B41DA00AF7729 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28D40457202B41DA00AF7729 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28D40482202B5E9400AF7729 /* HealthKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		28BB77C0202BA158002E8B21 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				28BB77C5202BA158002E8B21 /* Alamofire.framework */,
+				28BB77C7202BA158002E8B21 /* Pods_Mechaphonix.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		28D4041A202B41D900AF7729 = {
+			isa = PBXGroup;
+			children = (
+				28BB77BF202BA158002E8B21 /* Pods.xcodeproj */,
+				28D40425202B41DA00AF7729 /* Mechaphonix */,
+				28D4043A202B41DA00AF7729 /* MechaphonixTests */,
+				28D40445202B41DA00AF7729 /* MechaphonixUITests */,
+				28D4044F202B41DA00AF7729 /* Mechaphonix WatchKit App */,
+				28D4045E202B41DA00AF7729 /* Mechaphonix WatchKit Extension */,
+				28D40424202B41DA00AF7729 /* Products */,
+				28D4047D202B5E8300AF7729 /* Frameworks */,
+				B50DA1F0332BDD822EC36CFB /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		28D40424202B41DA00AF7729 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				28D40423202B41DA00AF7729 /* Mechaphonix.app */,
+				28D40437202B41DA00AF7729 /* MechaphonixTests.xctest */,
+				28D40442202B41DA00AF7729 /* MechaphonixUITests.xctest */,
+				28D4044B202B41DA00AF7729 /* Mechaphonix WatchKit App.app */,
+				28D4045A202B41DA00AF7729 /* Mechaphonix WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		28D40425202B41DA00AF7729 /* Mechaphonix */ = {
+			isa = PBXGroup;
+			children = (
+				28D4047C202B5E8300AF7729 /* Mechaphonix.entitlements */,
+				28D40426202B41DA00AF7729 /* AppDelegate.swift */,
+				28D40428202B41DA00AF7729 /* ViewController.swift */,
+				28D4042A202B41DA00AF7729 /* Main.storyboard */,
+				28D4042D202B41DA00AF7729 /* Assets.xcassets */,
+				28D4042F202B41DA00AF7729 /* LaunchScreen.storyboard */,
+				28D40432202B41DA00AF7729 /* Info.plist */,
+			);
+			path = Mechaphonix;
+			sourceTree = "<group>";
+		};
+		28D4043A202B41DA00AF7729 /* MechaphonixTests */ = {
+			isa = PBXGroup;
+			children = (
+				28D4043B202B41DA00AF7729 /* MechaphonixTests.swift */,
+				28D4043D202B41DA00AF7729 /* Info.plist */,
+			);
+			path = MechaphonixTests;
+			sourceTree = "<group>";
+		};
+		28D40445202B41DA00AF7729 /* MechaphonixUITests */ = {
+			isa = PBXGroup;
+			children = (
+				28D40446202B41DA00AF7729 /* MechaphonixUITests.swift */,
+				28D40448202B41DA00AF7729 /* Info.plist */,
+			);
+			path = MechaphonixUITests;
+			sourceTree = "<group>";
+		};
+		28D4044F202B41DA00AF7729 /* Mechaphonix WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				28D40450202B41DA00AF7729 /* Interface.storyboard */,
+				28D40453202B41DA00AF7729 /* Assets.xcassets */,
+				28D40455202B41DA00AF7729 /* Info.plist */,
+			);
+			path = "Mechaphonix WatchKit App";
+			sourceTree = "<group>";
+		};
+		28D4045E202B41DA00AF7729 /* Mechaphonix WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				28D40480202B5E9400AF7729 /* Mechaphonix WatchKit Extension.entitlements */,
+				28D4045F202B41DA00AF7729 /* InterfaceController.swift */,
+				28D40461202B41DA00AF7729 /* ExtensionDelegate.swift */,
+				28D40463202B41DA00AF7729 /* NotificationController.swift */,
+				28D40465202B41DA00AF7729 /* Assets.xcassets */,
+				28D40467202B41DA00AF7729 /* Info.plist */,
+				28D40468202B41DA00AF7729 /* PushNotificationPayload.apns */,
+			);
+			path = "Mechaphonix WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		28D4047D202B5E8300AF7729 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				28D40481202B5E9400AF7729 /* HealthKit.framework */,
+				28D4047E202B5E8300AF7729 /* HealthKit.framework */,
+				5FDA9AA39F2F5DE66827BBBB /* Pods_Mechaphonix.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B50DA1F0332BDD822EC36CFB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AABEB8C60EEBB1F80729DBE0 /* Pods-Mechaphonix.debug.xcconfig */,
+				74483A5A68ECF06DCA19F822 /* Pods-Mechaphonix.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		28D40422202B41DA00AF7729 /* Mechaphonix */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28D40473202B41DA00AF7729 /* Build configuration list for PBXNativeTarget "Mechaphonix" */;
+			buildPhases = (
+				029B6B15AA9507E24CF81941 /* [CP] Check Pods Manifest.lock */,
+				28D4041F202B41DA00AF7729 /* Sources */,
+				28D40420202B41DA00AF7729 /* Frameworks */,
+				28D40421202B41DA00AF7729 /* Resources */,
+				28D40472202B41DA00AF7729 /* Embed Watch Content */,
+				716A934DF3F8D3D803281D21 /* [CP] Embed Pods Frameworks */,
+				D7772F48FF246AE1F011122E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				28D4044E202B41DA00AF7729 /* PBXTargetDependency */,
+			);
+			name = Mechaphonix;
+			productName = Mechaphonix;
+			productReference = 28D40423202B41DA00AF7729 /* Mechaphonix.app */;
+			productType = "com.apple.product-type.application";
+		};
+		28D40436202B41DA00AF7729 /* MechaphonixTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28D40476202B41DA00AF7729 /* Build configuration list for PBXNativeTarget "MechaphonixTests" */;
+			buildPhases = (
+				28D40433202B41DA00AF7729 /* Sources */,
+				28D40434202B41DA00AF7729 /* Frameworks */,
+				28D40435202B41DA00AF7729 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				28D40439202B41DA00AF7729 /* PBXTargetDependency */,
+			);
+			name = MechaphonixTests;
+			productName = MechaphonixTests;
+			productReference = 28D40437202B41DA00AF7729 /* MechaphonixTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		28D40441202B41DA00AF7729 /* MechaphonixUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28D40479202B41DA00AF7729 /* Build configuration list for PBXNativeTarget "MechaphonixUITests" */;
+			buildPhases = (
+				28D4043E202B41DA00AF7729 /* Sources */,
+				28D4043F202B41DA00AF7729 /* Frameworks */,
+				28D40440202B41DA00AF7729 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				28D40444202B41DA00AF7729 /* PBXTargetDependency */,
+			);
+			name = MechaphonixUITests;
+			productName = MechaphonixUITests;
+			productReference = 28D40442202B41DA00AF7729 /* MechaphonixUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		28D4044A202B41DA00AF7729 /* Mechaphonix WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28D4046F202B41DA00AF7729 /* Build configuration list for PBXNativeTarget "Mechaphonix WatchKit App" */;
+			buildPhases = (
+				28D40449202B41DA00AF7729 /* Resources */,
+				28D4046E202B41DA00AF7729 /* Embed App Extensions */,
+				01B48A01FF52A9708D597D51 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				28D4045D202B41DA00AF7729 /* PBXTargetDependency */,
+			);
+			name = "Mechaphonix WatchKit App";
+			productName = "Mechaphonix WatchKit App";
+			productReference = 28D4044B202B41DA00AF7729 /* Mechaphonix WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		28D40459202B41DA00AF7729 /* Mechaphonix WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28D4046B202B41DA00AF7729 /* Build configuration list for PBXNativeTarget "Mechaphonix WatchKit Extension" */;
+			buildPhases = (
+				28D40456202B41DA00AF7729 /* Sources */,
+				28D40457202B41DA00AF7729 /* Frameworks */,
+				28D40458202B41DA00AF7729 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mechaphonix WatchKit Extension";
+			productName = "Mechaphonix WatchKit Extension";
+			productReference = 28D4045A202B41DA00AF7729 /* Mechaphonix WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		28D4041B202B41DA00AF7729 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Gavin Loughridge";
+				TargetAttributes = {
+					28D40422202B41DA00AF7729 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
+					};
+					28D40436202B41DA00AF7729 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 28D40422202B41DA00AF7729;
+					};
+					28D40441202B41DA00AF7729 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 28D40422202B41DA00AF7729;
+					};
+					28D4044A202B41DA00AF7729 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					28D40459202B41DA00AF7729 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit.watchos = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 28D4041E202B41DA00AF7729 /* Build configuration list for PBXProject "Mechaphonix" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 28D4041A202B41D900AF7729;
+			productRefGroup = 28D40424202B41DA00AF7729 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 28BB77C0202BA158002E8B21 /* Products */;
+					ProjectRef = 28BB77BF202BA158002E8B21 /* Pods.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				28D40422202B41DA00AF7729 /* Mechaphonix */,
+				28D40436202B41DA00AF7729 /* MechaphonixTests */,
+				28D40441202B41DA00AF7729 /* MechaphonixUITests */,
+				28D4044A202B41DA00AF7729 /* Mechaphonix WatchKit App */,
+				28D40459202B41DA00AF7729 /* Mechaphonix WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		28BB77C5202BA158002E8B21 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 28BB77C4202BA158002E8B21 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		28BB77C7202BA158002E8B21 /* Pods_Mechaphonix.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_Mechaphonix.framework;
+			remoteRef = 28BB77C6202BA158002E8B21 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		28D40421202B41DA00AF7729 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28D40431202B41DA00AF7729 /* LaunchScreen.storyboard in Resources */,
+				28D4042E202B41DA00AF7729 /* Assets.xcassets in Resources */,
+				28D4042C202B41DA00AF7729 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28D40435202B41DA00AF7729 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28D40440202B41DA00AF7729 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28D40449202B41DA00AF7729 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28D40454202B41DA00AF7729 /* Assets.xcassets in Resources */,
+				28D40452202B41DA00AF7729 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28D40458202B41DA00AF7729 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28D40466202B41DA00AF7729 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		029B6B15AA9507E24CF81941 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mechaphonix-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		716A934DF3F8D3D803281D21 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Mechaphonix/Pods-Mechaphonix-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mechaphonix/Pods-Mechaphonix-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7772F48FF246AE1F011122E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mechaphonix/Pods-Mechaphonix-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		28D4041F202B41DA00AF7729 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28D40429202B41DA00AF7729 /* ViewController.swift in Sources */,
+				28D40427202B41DA00AF7729 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28D40433202B41DA00AF7729 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28D4043C202B41DA00AF7729 /* MechaphonixTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28D4043E202B41DA00AF7729 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28D40447202B41DA00AF7729 /* MechaphonixUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28D40456202B41DA00AF7729 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28D40464202B41DA00AF7729 /* NotificationController.swift in Sources */,
+				28D40462202B41DA00AF7729 /* ExtensionDelegate.swift in Sources */,
+				28D40460202B41DA00AF7729 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		28D40439202B41DA00AF7729 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 28D40422202B41DA00AF7729 /* Mechaphonix */;
+			targetProxy = 28D40438202B41DA00AF7729 /* PBXContainerItemProxy */;
+		};
+		28D40444202B41DA00AF7729 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 28D40422202B41DA00AF7729 /* Mechaphonix */;
+			targetProxy = 28D40443202B41DA00AF7729 /* PBXContainerItemProxy */;
+		};
+		28D4044E202B41DA00AF7729 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 28D4044A202B41DA00AF7729 /* Mechaphonix WatchKit App */;
+			targetProxy = 28D4044D202B41DA00AF7729 /* PBXContainerItemProxy */;
+		};
+		28D4045D202B41DA00AF7729 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 28D40459202B41DA00AF7729 /* Mechaphonix WatchKit Extension */;
+			targetProxy = 28D4045C202B41DA00AF7729 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		28D4042A202B41DA00AF7729 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28D4042B202B41DA00AF7729 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		28D4042F202B41DA00AF7729 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28D40430202B41DA00AF7729 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		28D40450202B41DA00AF7729 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28D40451202B41DA00AF7729 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		28D40469202B41DA00AF7729 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		28D4046A202B41DA00AF7729 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		28D4046C202B41DA00AF7729 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Mechaphonix WatchKit Extension/Mechaphonix WatchKit Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SEFE8W9WG3;
+				INFOPLIST_FILE = "Mechaphonix WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = gavinloughridge.Mechaphonix.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.2;
+			};
+			name = Debug;
+		};
+		28D4046D202B41DA00AF7729 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Mechaphonix WatchKit Extension/Mechaphonix WatchKit Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SEFE8W9WG3;
+				INFOPLIST_FILE = "Mechaphonix WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = gavinloughridge.Mechaphonix.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.2;
+			};
+			name = Release;
+		};
+		28D40470202B41DA00AF7729 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SEFE8W9WG3;
+				IBSC_MODULE = Mechaphonix_WatchKit_Extension;
+				INFOPLIST_FILE = "Mechaphonix WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = gavinloughridge.Mechaphonix.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.2;
+			};
+			name = Debug;
+		};
+		28D40471202B41DA00AF7729 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SEFE8W9WG3;
+				IBSC_MODULE = Mechaphonix_WatchKit_Extension;
+				INFOPLIST_FILE = "Mechaphonix WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = gavinloughridge.Mechaphonix.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.2;
+			};
+			name = Release;
+		};
+		28D40474202B41DA00AF7729 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AABEB8C60EEBB1F80729DBE0 /* Pods-Mechaphonix.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Mechaphonix/Mechaphonix.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SEFE8W9WG3;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)/**";
+				INFOPLIST_FILE = Mechaphonix/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = gavinloughridge.Mechaphonix;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		28D40475202B41DA00AF7729 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74483A5A68ECF06DCA19F822 /* Pods-Mechaphonix.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Mechaphonix/Mechaphonix.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SEFE8W9WG3;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)/**";
+				INFOPLIST_FILE = Mechaphonix/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = gavinloughridge.Mechaphonix;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		28D40477202B41DA00AF7729 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SEFE8W9WG3;
+				FRAMEWORK_SEARCH_PATHS = "";
+				INFOPLIST_FILE = MechaphonixTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = gavinloughridge.MechaphonixTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mechaphonix.app/Mechaphonix";
+			};
+			name = Debug;
+		};
+		28D40478202B41DA00AF7729 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SEFE8W9WG3;
+				FRAMEWORK_SEARCH_PATHS = "";
+				INFOPLIST_FILE = MechaphonixTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = gavinloughridge.MechaphonixTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mechaphonix.app/Mechaphonix";
+			};
+			name = Release;
+		};
+		28D4047A202B41DA00AF7729 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SEFE8W9WG3;
+				FRAMEWORK_SEARCH_PATHS = "";
+				INFOPLIST_FILE = MechaphonixUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = gavinloughridge.MechaphonixUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Mechaphonix;
+			};
+			name = Debug;
+		};
+		28D4047B202B41DA00AF7729 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SEFE8W9WG3;
+				FRAMEWORK_SEARCH_PATHS = "";
+				INFOPLIST_FILE = MechaphonixUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = gavinloughridge.MechaphonixUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Mechaphonix;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		28D4041E202B41DA00AF7729 /* Build configuration list for PBXProject "Mechaphonix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28D40469202B41DA00AF7729 /* Debug */,
+				28D4046A202B41DA00AF7729 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28D4046B202B41DA00AF7729 /* Build configuration list for PBXNativeTarget "Mechaphonix WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28D4046C202B41DA00AF7729 /* Debug */,
+				28D4046D202B41DA00AF7729 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28D4046F202B41DA00AF7729 /* Build configuration list for PBXNativeTarget "Mechaphonix WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28D40470202B41DA00AF7729 /* Debug */,
+				28D40471202B41DA00AF7729 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28D40473202B41DA00AF7729 /* Build configuration list for PBXNativeTarget "Mechaphonix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28D40474202B41DA00AF7729 /* Debug */,
+				28D40475202B41DA00AF7729 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28D40476202B41DA00AF7729 /* Build configuration list for PBXNativeTarget "MechaphonixTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28D40477202B41DA00AF7729 /* Debug */,
+				28D40478202B41DA00AF7729 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28D40479202B41DA00AF7729 /* Build configuration list for PBXNativeTarget "MechaphonixUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28D4047A202B41DA00AF7729 /* Debug */,
+				28D4047B202B41DA00AF7729 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 28D4041B202B41DA00AF7729 /* Project object */;
+}
