@@ -10,10 +10,6 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/public/instrument.html');
 });
 
-app.get('/composer', function(req, res){
-  res.sendFile(__dirname + '/public/composer.html');
-});
-
 app.get('/sequencer', function(req, res){
   res.render('sequencer');
 });
