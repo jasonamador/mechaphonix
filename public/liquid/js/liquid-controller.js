@@ -3,7 +3,6 @@ Liquid Controller
 */
 const socket = io();
 
-
 window.onload = function() {
   /*
   Set up some colors
