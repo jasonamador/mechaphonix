@@ -3,10 +3,6 @@ const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
-// setup input controllers
-const mobileController = require('./input-controllers/mobile-controller.js')
-const eegController = require('./input-controllers/eeg-controller.js')
-
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res){
@@ -20,11 +16,25 @@ app.get('/composer', function(req, res){
 // the code below creates a new socket for every connection to the server socket, so socket refers to whatever device made the connection.
 io.on('connection', function(socket){
   console.log('connected')
-  mobileController(socket)
-  eegController(socket)
+
+  socket.on('phone drum input', (message) => {
+    socket.emit('play notes self', message);
+    socket.broadcast.emit('play notes master', message);
+  });
+
+  socket.on('phone chord input', (message) => {
+    socket.emit('play notes self', message);
+    socket.broadcast.emit('play notes master', message);
+  });
+
+  socket.on('eeg input', (message) => {
+    console.log('senging eeg notes:', message.notes);
+    socket.broadcast.emit('play notes master', message);
+  });
 
   socket.on('liquid-1 message', (message) => {
     socket.emit('liquid-1 message', message);
+    socket.broadcast.emit('liquid-1 message', message);
   });
 });
 

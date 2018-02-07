@@ -1,7 +1,13 @@
+const SerialPort = require('serialport');
+const Readline = SerialPort.parsers.Readline;
+// set the serial port bellow to whatever port your arduino is on
+const port = new SerialPort('/dev/cu.usbmodem1451');
+const parser = new Readline();
+// set the host bellow to whatever port your server is listening on
+const socket = require('socket.io-client')('http://localhost:3000');
+
 function getNote(number) {
-  // if (number < 2) return 'a5'
-  // if (number < 4) return 'g5'
-   if (number > 8000000) return 'f3'
+  if (number > 8000000) return 'f3'
   if (number < 8000000 && number > 700000) return 'e3'
   if (number > 700000 && number > 600000) return 'd3'
   if (number < 600000 && number > 500000) return 'c3'
@@ -29,37 +35,38 @@ function getNote(number) {
   if (number < 15000 && number >  10000) return 'e3'
   if (number < 10000 && number > 5000) return 'd3'
   if (number < 5000 && number >=0 ) return 'c3'
-  //if (number < 250000) return 'b2'
-  // if (number < 40000) return 'a2'
-  // if (number < 60000) return 'g2'
-  // if (number < 80000) return 'f2'
-  // if (number < 100000) return 'e2'
-  // if (number < 200000) return 'd2'
-  // if (number < 400000) return 'c2'
-  // if (number < 600000) return 'b1'
-  // if (number < 800000) return 'a1'
-  // if (number < 1000000) return 'g1'
-  // if (number < 2000000) return 'f1'
-  // if (number < 4000000) return 'e1'
-  // return 'd1'
 }
 
-module.exports = function(socket) {
-  console.log('set up socket');
-  socket.on('eeg input', function(data){
-    console.log(data);
-    console.log((data.delta + data.theta)/2)
-    let notes = [
-      getNote((parseInt(data.delta) + parseInt(data.theta) + parseInt(data.highGamma) + parseInt(data.lowGamma))/2),
-      getNote((parseInt(data.lowAlpha) + parseInt(data.highAlpha) + parseInt(data.highGamma))/3),
-    ]
-      console.log(notes)
-    socket.emit('play self', {
-      notes: notes
-    })
+socket.on('connect', function(){
+  port.pipe(parser);
+  parser.on('data', function(raw) {
+    eeg = raw.trim().split(',')
+    if (eeg.length == 11) {
+      console.log('recived eeg signal:', eeg);
 
-    socket.broadcast.emit('play composer', {
-      notes: notes
-    })
-  });
-}
+      let signal = eeg[0]
+      let attention = eeg[1]
+      let meditation = eeg[2]
+      let delta = eeg[3]
+      let theta = eeg[4]
+      let lowAlpha = eeg[5]
+      let highAlpha = eeg[6]
+      let lowBeta = eeg[7]
+      let highBeta = eeg[8]
+      let lowGamma = eeg[9]
+      let highGamma = eeg[10]
+
+
+      let notes = [
+        getNote((parseInt(delta) + parseInt(theta) + parseInt(highGamma) + parseInt(lowGamma))/4),
+        getNote((parseInt(lowAlpha) + parseInt(highAlpha) + parseInt(highGamma))/3),
+      ]
+
+      console.log('sending notes:', notes);
+
+      socket.emit('eeg input', {
+        notes: notes
+      })
+    }
+  })
+});
