@@ -23,12 +23,6 @@ let sampler = new Tone.Sampler({
   console.log('samples loaded');
 }).toMaster();
 
-function start() {
-  sequences.forEach((s) => {
-    s.start();
-  });
-}
-
 socket.on('sequencer message', function(message) {
   if (message.add) {
     sequences[message.sequence].add(message.time, samplerNotes[message.sequence]);
@@ -37,7 +31,9 @@ socket.on('sequencer message', function(message) {
     sequences[message.sequence].remove(message.time);
   }
   if (message.start) {
-    start();
+  sequences.forEach((s) => {
+    s.start();
+  });
   }
   if (message.stop) {
     sequences.forEach((s) => {
