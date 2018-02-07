@@ -1,0 +1,23 @@
+.row {
+  display: flex;
+}
+.cell {
+  width: calc(100% / 16);
+  height: 20px;
+  border-radius: 3px;
+  border: 1px solid black;
+  margin: 1px;
+}
+
+.cell.strength-0 {
+  background: white;
+}
+.cell.strength-1 {
+  background: yellow;
+}
+.cell.strength-2 {
+  background: orange;
+}
+.cell.strength-3 {
+  background: red;
+}
