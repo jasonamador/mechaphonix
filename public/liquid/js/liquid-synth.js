@@ -63,7 +63,7 @@ blue.init();
 red.init();
 green.init();
 
-socket.on('liquid-1 message', (message) => {
+socket.on('liquid message', (message) => {
   if (message.blue) {
     blue.update(message.blue);
   }
