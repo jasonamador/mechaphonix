@@ -6,10 +6,6 @@ const io = require('socket.io')(http);
 app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 
-app.get('/', function(req, res){
-  res.sendFile(__dirname + '/public/instrument.html');
-});
-
 app.get('/sequencer', function(req, res){
   res.render('sequencer');
 });
@@ -18,24 +14,24 @@ app.get('/sequencer', function(req, res){
 io.on('connection', function(socket){
   console.log('connected')
 
-  socket.on('phone drum input', (message) => {
-    socket.emit('play notes self', message);
-    socket.broadcast.emit('play notes master', message);
+  socket.on('phone drum message', (message) => {
+    // socket.emit('phone drum message', message);
+    socket.broadcast.emit('phone drum message', message);
   });
 
-  socket.on('phone chord input', (message) => {
-    socket.emit('play notes self', message);
-    socket.broadcast.emit('play notes master', message);
+  socket.on('phone chord message', (message) => {
+    // socket.emit('phone chord message', message);
+    socket.broadcast.emit('phone chord message', message);
   });
 
-  socket.on('eeg input', (message) => {
+  socket.on('eeg message', (message) => {
     console.log('senging eeg notes:', message.notes);
-    socket.broadcast.emit('play notes master', message);
+    socket.broadcast.emit('eeg message', message);
   });
 
-  socket.on('liquid-1 message', (message) => {
+  socket.on('liquid message', (message) => {
     // socket.emit('liquid-1 message', message);
-    socket.broadcast.emit('liquid-1 message', message);
+    socket.broadcast.emit('liquid message', message);
   });
 
   socket.on('sequencer message', (message => {

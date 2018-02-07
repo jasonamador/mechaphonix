@@ -1,5 +1,5 @@
 const socket = io()
-const polySynth = new Tone.PolySynth(8, Tone.Synth).toMaster();
+// const polySynth = new Tone.PolySynth(8, Tone.Synth).toMaster();
 const context = new AudioContext();
 
 // set previous variables and minimum degree change needed to emit a new message
@@ -44,10 +44,10 @@ function toggleMute() {
 // establish socket connection
 socket.on('connect', function() {
   // play the notes this device produced
-  socket.on('play notes self', function(data){
-    console.log(data);
-    if (unmuted) polySynth.triggerAttackRelease(data.notes, "2n");
-  })
+  // socket.on('phone chord message', function(data){
+  //   console.log(data);
+  //   if (unmuted) polySynth.triggerAttackRelease(data.notes, "2n");
+  // })
 
   // react to changes in device orientation
   window.ondeviceorientation = function(event) {
@@ -77,7 +77,7 @@ socket.on('connect', function() {
     ]
 
     // emit a message to the server containing the new position data
-    socket.emit('phone chord input', {
+    socket.emit('phone chord message', {
       notes: notes
     })
   };

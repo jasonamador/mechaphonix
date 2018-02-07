@@ -37,7 +37,7 @@ window.onload = function() {
         y = (canvas.height - y) / canvas.height;
         message[rect.color] = {x, y};
       });
-      socket.emit('liquid-1 message', message);
+      socket.emit('liquid message', message);
     }
   });
 }
