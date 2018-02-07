@@ -14,6 +14,10 @@ app.get('/sequencer', function(req, res){
 io.on('connection', function(socket){
   console.log('connected')
 
+  socket.on('log', (message) => {
+    console.log('log:', message);
+  });
+
   socket.on('pulse message', (message) => {
     console.log('pulse is:', message);
   });

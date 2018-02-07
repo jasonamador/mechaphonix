@@ -2,8 +2,10 @@ const socket = io()
 const context = new AudioContext();
 
 // set previous variables and minimum degree change needed to emit a new message
-let minimumImpact = 10
+let minimumImpact = 15
+let resetImpact = 5
 let unmuted = false
+let state = 'rest'
 
 // start audio context for mobile devices
 StartAudioContext(Tone.context, '#play')
@@ -33,14 +35,37 @@ socket.on('connect', function() {
     // ) return
 
 
-    if (Math.abs(acceleration.x) > minimumImpact) {
+    // if (Math.abs(acceleration.x) > minimumImpact) {
+    //   socket.emit('phone drum message', {note: 'c4', acceleration});
+    // }
+    // if (Math.abs(acceleration.y) > minimumImpact) {
+    //   socket.emit('phone drum message', {note: 'd4', acceleration});
+    // }
+    // if (Math.abs(acceleration.z) > minimumImpact) {
+    //   socket.emit('phone drum message', {note: 'e4', acceleration});
+    // }
+
+    // if (Math.abs(acceleration.x) > minimumImpact) {
+    //   socket.emit('phone drum message', {note: 'c4', acceleration});
+    // }
+    // if (Math.abs(acceleration.y) > minimumImpact) {
+    //   socket.emit('phone drum message', {note: 'd4', acceleration});
+    // }
+
+    // if acceleration is high in the negative z, set state to struck
+    if (state == 'ready' && acceleration.z < -minimumImpact) {
       socket.emit('phone drum message', {note: 'c4', acceleration});
+      state = 'struck'
     }
-    if (Math.abs(acceleration.y) > minimumImpact) {
-      socket.emit('phone drum message', {note: 'd4', acceleration});
+
+    // if acceleration is low in the negative z, set state to rest
+    if (state == 'struck' && acceleration.z < -resetImpact) {
+      state = 'rest'
     }
-    if (Math.abs(acceleration.z) > minimumImpact) {
-      socket.emit('phone drum message', {note: 'e4', acceleration});
+
+    // if acceleration is high in the positive z, set state to ready
+    if (state == 'rest' && acceleration.z > minimumImpact) {
+      state = 'ready'
     }
 
     // emit a message to the server containing the new position data
