@@ -13,6 +13,24 @@ app.get('/', function(req, res){
 app.get('/sequencer', function(req, res){
   res.render('sequencer');
 });
+app.get('/midi', function(req, res){
+  res.render('midi');
+});
+app.get('/master', function(req, res){
+  res.render('master');
+});
+app.get('/phone-chord', function(req, res){
+  res.render('phone-chord');
+});
+app.get('/phone-drum', function(req, res){
+  res.render('phone-drum');
+});
+app.get('/instruments', function(req, res){
+  res.render('instruments');
+});
+app.get('/liquid', function(req, res){
+  res.render('liquid');
+});
 
 // the code below creates a new socket for every connection to the server socket, so socket refers to whatever device made the connection.
 io.on('connection', function(socket){
