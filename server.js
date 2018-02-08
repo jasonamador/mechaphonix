@@ -7,7 +7,7 @@ app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 
 app.get('/', function(req, res){
-  res.sendStatus(500);
+  res.render('instruments');
 });
 
 app.get('/sequencer', function(req, res){
@@ -24,9 +24,6 @@ app.get('/phone-chord', function(req, res){
 });
 app.get('/phone-drum', function(req, res){
   res.render('phone-drum');
-});
-app.get('/instruments', function(req, res){
-  res.render('instruments');
 });
 app.get('/liquid', function(req, res){
   res.render('liquid');
