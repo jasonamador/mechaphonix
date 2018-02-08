@@ -46,6 +46,12 @@ io.on('connection', function(socket){
     // socket.emit('sequencer message', message);
     socket.broadcast.emit('sequencer message', message);
   }));
+
+  socket.on('midi message', (message) => {
+    // socket.emit('midi message', message);
+    socket.broadcast.emit('midi message', message);
+    console.log(message);
+  });
 });
 
 http.listen(3000, function(){

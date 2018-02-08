@@ -1,39 +1,46 @@
-let phaser = new Tone.Phaser().toMaster();
-phaser.octaves.value = 5;
-let synth = new Tone.PolySynth().connect(phaser);
-synth.volume.value = -12;
+const socket = io();
 
+{
+  // first we need to connect to a new socket
+  socket.on('connect', () => {
+    init();
+  })
 
-navigator.requestMIDIAccess()
-  .then(function(access) {
-    // Get lists of available MIDI controllers
-    const inputs = access.inputs.values();
-    const outputs = access.outputs.values();
+  /*
+  Initialize the MIDI interface
+  */
+  function init() {
+    console.log('init')
+    navigator.requestMIDIAccess()
+      .then(function(midi) {
+        const inputs = midi.inputs.values();
 
-    for (var i = inputs.next(); i && !i.done; i = inputs.next()) {
-      i.value.onmidimessage = (message) => {
-        console.log(message.data);
-        let noteNumber = message.data[1];
-        let note = Tone.Frequency(noteNumber, 'midi').toNote();
-        let velocity = message.data[2];
-        if (message.data[0] === 144) {
-          if (velocity != 0) {
-            synth.triggerAttack(note);
-          } else {
-            synth.triggerRelease(note);
-          }
+        // I don't quite understand this loop, but it works to get all the inputs
+        for (var input = inputs.next(); input && !input.done; input = inputs.next()) {
+          // i is the input, so we are collecting messages from all of the available inputs
+          handleInput(input);
         }
-        if (message.data[0] === 224) {
-          synth.set('detune', ((velocity - 64) / 64) * 1200);
-        }
-        if (message.data[0] === 176) {
-          phaser.frequency.value = velocity / 7;
-        }
-      }
+
+        midi.onstatechange = function(e) {
+          // Print information about the (dis)connected MIDI controller
+          // console.log(e.port.name, e.port.manufacturer, e.port.state);
+        };
+      });
+  }
+
+  /*
+  Translates the MIDI input and send a socket message
+  */
+  function handleInput(input) {
+    input.value.onmidimessage = (message) => {
+      console.log('handleInput');
+      let socketMessage = {
+        cc : message.data[0],
+        note: message.data[1],
+        vel: message.data[2],
+      };
+
+      socket.emit('midi message', socketMessage);
     }
-
-     access.onstatechange = function(e) {
-       // Print information about the (dis)connected MIDI controller
-       // console.log(e.port.name, e.port.manufacturer, e.port.state);
-     };
-  });
+  }
+}
