@@ -1,0 +1,49 @@
+@font-face {
+    font-family: DestroyEarth;
+    src: url("/fonts/DestroyEarthBB.otf") format("opentype");
+}
+
+@font-face {
+    font-family: firefight;
+    src: url("/fonts/firefightbb_reg.otf") format("opentype");
+}
+
+@font-face {
+    font-family: Inhuman;
+    src: url("/fonts/InhumanBB.otf") format("opentype");
+}
+
+@font-face {
+    font-family: MarkoftheBeast;
+    src: url("/fonts/MarkoftheBeastBB.otf") format("opentype");
+}
+
+@font-face {
+    font-family: MIDNSBRG;
+    src: url("/fonts/MIDNSBRG.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: PopulationZero;
+    src: url("/fonts/PopulationZeroBB.otf") format("opentype");
+}
+
+@font-face {
+    font-family: PSIPBRG;
+    src: url("/fonts/PSIPBRG_.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: Saucer;
+    src: url("/fonts/SaucerBB.otf") format("opentype");
+}
+
+@font-face {
+    font-family: ShallowGrave;
+    src: url("/fonts/ShallowGraveBB.otf") format("opentype");
+}
+
+@font-face {
+    font-family: youmurderer;
+    src: url("/fonts/youmurdererbb_reg.ttf") format("truetype");
+}

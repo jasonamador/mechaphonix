@@ -2,8 +2,8 @@ const socket = io()
 const context = new AudioContext();
 
 // set previous variables and minimum degree change needed to emit a new message
-let minimumImpact = 15
-let resetImpact = 5
+let minimumImpact = -5
+let resetImpact = -1
 let unmuted = false
 let state = 'rest'
 
@@ -12,7 +12,7 @@ StartAudioContext(Tone.context, '#play')
 
 function toggleMute() {
   unmuted = !unmuted
-  document.getElementById('play').innerHTML = unmuted? 'mute': 'unmute'
+  document.getElementById('play').innerHTML = unmuted? 'MUTE': 'UNMUTE'
 }
 
 // establish socket connection
@@ -26,45 +26,30 @@ socket.on('connect', function() {
   // react to changes in device acceleration
   window.ondevicemotion = function(event) {
     // get acceleration data
-    let acceleration = event.acceleration;
+    let acceleration
+    if (event.acceleration.x) {
+      acceleration = event.acceleration
+      accelerationy = acceleration.y
+    } else {
+      acceleration = event.accelerationIncludingGravity
+      accelerationy = acceleration.y - 9.81
+    }
 
-    // if impact not high enough, stop
-    // if ((Math.abs(accelerationX) < minimumImpact) &&
-    //     (Math.abs(accelerationY) < minimumImpact) &&
-    //     (Math.abs(accelerationZ) < minimumImpact)
-    // ) return
-
-
-    // if (Math.abs(acceleration.x) > minimumImpact) {
-    //   socket.emit('phone drum message', {note: 'c4', acceleration});
-    // }
-    // if (Math.abs(acceleration.y) > minimumImpact) {
-    //   socket.emit('phone drum message', {note: 'd4', acceleration});
-    // }
-    // if (Math.abs(acceleration.z) > minimumImpact) {
-    //   socket.emit('phone drum message', {note: 'e4', acceleration});
-    // }
-
-    // if (Math.abs(acceleration.x) > minimumImpact) {
-    //   socket.emit('phone drum message', {note: 'c4', acceleration});
-    // }
-    // if (Math.abs(acceleration.y) > minimumImpact) {
-    //   socket.emit('phone drum message', {note: 'd4', acceleration});
-    // }
+    socket.emit('log', accelerationy);
 
     // if acceleration is high in the negative z, set state to struck
-    if (state == 'ready' && acceleration.z < -minimumImpact) {
-      socket.emit('phone drum message', {note: 'c4', acceleration});
+    if (state == 'ready' && (acceleration.y) > -minimumImpact) {
+      socket.emit('phone drum message', {note: 'd4', acceleration});
       state = 'struck'
     }
 
     // if acceleration is low in the negative z, set state to rest
-    if (state == 'struck' && acceleration.z < -resetImpact) {
+    if (state == 'struck' && (acceleration.y) > -resetImpact) {
       state = 'rest'
     }
 
     // if acceleration is high in the positive z, set state to ready
-    if (state == 'rest' && acceleration.z > minimumImpact) {
+    if (state == 'rest' && (acceleration.y) < resetImpact) {
       state = 'ready'
     }
 
