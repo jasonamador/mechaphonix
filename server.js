@@ -9,7 +9,6 @@ app.set('view engine', 'ejs');
 app.get('/', function(req, res){
   res.render('instruments');
 });
-
 app.get('/sequencer', function(req, res){
   res.render('sequencer');
 });

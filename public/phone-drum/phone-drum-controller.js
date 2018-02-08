@@ -15,6 +15,21 @@ function toggleMute() {
   document.getElementById('play').innerHTML = unmuted? 'MUTE': 'UNMUTE'
 }
 
+// setup swipe interface
+$(function(){
+  console.log('making swipe event');
+  // Bind the swipeHandler callback function to the swipe event on div.box
+  $( "#selector" ).on( "swipe", swipeHandler );
+
+  // Callback function references the event target and adds the 'swipe' class to it
+  function swipeHandler( event ){
+    console.log('swipe detected');
+    let swipe = event.special.swipe
+    let direction = swipe.handleSwipe(swipe.start,swipe.stop)
+    socket.emit('log', direction);
+  }
+});
+
 // establish socket connection
 socket.on('connect', function() {
   // play the notes this device produced
@@ -35,7 +50,7 @@ socket.on('connect', function() {
       accelerationy = acceleration.y - 9.81
     }
 
-    socket.emit('log', accelerationy);
+    // socket.emit('log', accelerationy);
 
     // if acceleration is high in the negative z, set state to struck
     if (state == 'ready' && (acceleration.y) > -minimumImpact) {
