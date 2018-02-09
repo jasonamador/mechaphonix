@@ -11,7 +11,7 @@ for (let i = 0; i < samplerNotes.length; i++) {
 }
 
 let sampler = new Tone.Sampler({
-  'c4' : '/samples/crash.mp3',
+  'c4' : '/samples/crash.wav',
   'c#4' : '/samples/floor_tom.mp3',
   'd4' : '/samples/mid_tom.mp3',
   'd#4' : '/samples/high_tom.mp3',
