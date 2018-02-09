@@ -4,8 +4,9 @@ const socket = io()
 const context = new AudioContext();
 
 // set previous variables and minimum degree change needed to emit a new message
-let minimumImpact = -5
-let resetImpact = -1
+let struckForce = 15
+let readyForce = 5
+let restForce = 10
 let unmuted = false
 let state = 'rest'
 let instruments = [
@@ -73,32 +74,34 @@ socket.on('connect', function() {
     // get acceleration data
     let acceleration
     if (event.acceleration.x) {
-      acceleration = event.acceleration
-      accelerationy = acceleration.y
+      acceleration = Math.sqrt(event.acceleration.x * event.acceleration.x +
+                     event.acceleration.y * event.acceleration.y +
+                     event.acceleration.z * event.acceleration.z)
+
     } else {
-      acceleration = event.accelerationIncludingGravity
-      accelerationy = acceleration.y - 9.81
+      acceleration = Math.sqrt(event.accelerationIncludingGravity.x * event.accelerationIncludingGravity.x +
+                     event.accelerationIncludingGravity.y * event.accelerationIncludingGravity.y +
+                     event.accelerationIncludingGravity.z * event.accelerationIncludingGravity.z) - 9.81
     }
 
-    // socket.emit('log', accelerationy);
-
     // if acceleration is high in the negative z, set state to struck
-    if (state == 'ready' && (acceleration.y) > -minimumImpact) {
-      socket.emit('log', {note: instruments[instrument].note, acceleration});
+    if (state == 'ready' && acceleration > struckForce) {
       socket.emit('phone drum message', {note: instruments[instrument].note, acceleration});
       state = 'struck'
     }
 
     // if acceleration is low in the negative z, set state to rest
-    if (state == 'struck' && (acceleration.y) > -resetImpact) {
-      state = 'rest'
+    if (state == 'struck' && acceleration < restForce) {
+      if (instrument == 1) {
+        state = 'rest'
+      } else {
+        state = 'ready'
+      }
     }
 
     // if acceleration is high in the positive z, set state to ready
-    if (state == 'rest' && (acceleration.y) < resetImpact) {
+    if (state == 'rest' && acceleration > readyForce) {
       state = 'ready'
     }
-
-    // emit a message to the server containing the new position data
   };
 });
