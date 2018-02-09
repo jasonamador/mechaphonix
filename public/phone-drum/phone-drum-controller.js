@@ -11,21 +11,37 @@ let unmuted = false
 let state = 'rest'
 let instruments = [
   {
-    name: '<-  triangle  ->',
-    note: 'c4',
+    name: '<-  shaker  ->',
+    note: 'a4',
     color: '#477998'
+  },
+  {
+    name: '<-  cowbell  ->',
+    note: 'b4',
+    color: '#FF4F79'
+  },
+  {
+    name: '<-  clap  ->',
+    note: 'c4',
+    color: '#B79492'
   },
   {
     name: '<-  drum  ->',
     note: 'd4',
-    color: '#477998'
+    color: '#E5FFDE'
   },
   {
-    name: '<-  shaker  ->',
+    name: '<-  snare  ->',
     note: 'e4',
-    color: '#477998'
+    color: '#F5DD90'
+  },
+  {
+    name: '<-  triangle  ->',
+    note: 'f4',
+    color: '#B1B5C8'
   }
 ]
+
 let instrument = 0
 setInstrument(instrument)
 
@@ -40,18 +56,19 @@ function toggleMute() {
 
 // setup swipe interface
 $(function(){
+  let length = instruments.length
   // Bind the swipeleftHandler callback function to the swipe event on div.box
   $(window).on( "swipeleft", swipeleftHandler );
   // Callback function references the event target and adds the 'swipeleft' class to it
   function swipeleftHandler( event ){
-    instrument = (instrument + 1) % 3
+    instrument = (instrument + 1) % length
     setInstrument(instrument)
   }
 
   $(window).on( "swiperight", swiperightHandler );
   // Callback function references the event target and adds the 'swipeleft' class to it
   function swiperightHandler( event ){
-    instrument = (instrument + 2) % 3
+    instrument = (instrument + length - 1) % length
     setInstrument(instrument)
   }
 });
@@ -92,7 +109,7 @@ socket.on('connect', function() {
 
     // if acceleration is low in the negative z, set state to rest
     if (state == 'struck' && acceleration < restForce) {
-      if (instrument == 1) {
+      if (instrument == 3 || instrument == 4) {
         state = 'rest'
       } else {
         state = 'ready'
