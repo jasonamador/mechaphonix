@@ -1,5 +1,7 @@
 const socket = io();
 
+let midiMessage;
+
 {
   // first we need to connect to a new socket
   socket.on('connect', () => {
@@ -39,6 +41,8 @@ const socket = io();
         note: message.data[1],
         vel: message.data[2],
       };
+
+      midiPaper(socketMessage);
 
       socket.emit('midi message', socketMessage);
     }
