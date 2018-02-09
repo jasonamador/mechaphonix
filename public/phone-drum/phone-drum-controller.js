@@ -34,11 +34,6 @@ let instruments = [
     name: '<-  snare  ->',
     note: 'e4',
     color: '#F5DD90'
-  },
-  {
-    name: '<-  triangle  ->',
-    note: 'f4',
-    color: '#B1B5C8'
   }
 ]
 
@@ -109,7 +104,7 @@ socket.on('connect', function() {
 
     // if acceleration is low in the negative z, set state to rest
     if (state == 'struck' && acceleration < restForce) {
-      if (instrument == 3 || instrument == 4) {
+      if (instrument < 2) {
         state = 'rest'
       } else {
         state = 'ready'
