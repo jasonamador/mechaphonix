@@ -3,9 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>Master</title>
+    <link href="/css/styles.css" rel="stylesheet"/>
   </head>
   <body>
-    <h1>master</h1>
+    <div class="container">
+      <h1>master</h1>
+    </div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/vendor/Tone.js"></script>
     <script src="/master/master.js"></script>
@@ -15,5 +18,8 @@
     <script src="/phone-chord/phone-chord-synth.js"></script>
     <script src="/phone-drum/phone-drum-synth.js"></script>
     <script src="/midi/js/midi-synth.js"></script>
+    <script>
+      document.getElementsByClassName('container')[0].style.height = `${window.innerHeight}px`
+    </script>
   </body>
 </html>

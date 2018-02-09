@@ -1,0 +1,33 @@
+$silver: #C4BBB8;
+$blue: #477998;
+$black: #494947;
+$purple: #7f0799;
+$green: #35ff69;
+$yellow: #EEB868;
+$red: #CE6A85;
+
+@font-face {
+    font-family: firefight;
+    src: url("/fonts/firefightbb_reg.otf") format("opentype");
+}
+
+*, html {
+  border: 0;
+  margin: 0px;
+  font-family: firefight;
+}
+
+h1 {
+  font-size: 200%;
+  color: $purple;
+  text-shadow: -2px 0 $green, 0 2px $green, 2px 0 $green, 0 -2px $green;
+}
+
+.container {
+  width: 100%;
+  background-color: $black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
