@@ -1,0 +1,27 @@
+$silver: #C4BBB8;
+$blue: #477998;
+$black: #494947;
+$purple: #7f0799;
+$green: #35ff69;
+$yellow: #EEB868;
+$red: #CE6A85;
+
+*, html {
+  border: 0;
+  margin: 0px;
+  font-family: firefight;
+}
+
+.selector {
+  width: 80%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  width: 100%;
+  font-size: 100%;
+  background-color: $silver;
+}

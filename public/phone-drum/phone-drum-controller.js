@@ -1,3 +1,5 @@
+$.mobile.autoInitializePage = false;
+
 const socket = io()
 const context = new AudioContext();
 
@@ -6,6 +8,25 @@ let minimumImpact = -5
 let resetImpact = -1
 let unmuted = false
 let state = 'rest'
+let instruments = [
+  {
+    name: '<-  triangle  ->',
+    note: 'c4',
+    color: '#477998'
+  },
+  {
+    name: '<-  drum  ->',
+    note: 'd4',
+    color: '#477998'
+  },
+  {
+    name: '<-  shaker  ->',
+    note: 'e4',
+    color: '#477998'
+  }
+]
+let instrument = 0
+setInstrument(instrument)
 
 // start audio context for mobile devices
 StartAudioContext(Tone.context, '#play')
@@ -15,20 +36,29 @@ function toggleMute() {
   document.getElementById('play').innerHTML = unmuted? 'MUTE': 'UNMUTE'
 }
 
+
 // setup swipe interface
 $(function(){
-  console.log('making swipe event');
-  // Bind the swipeHandler callback function to the swipe event on div.box
-  $( "#selector" ).on( "swipe", swipeHandler );
+  // Bind the swipeleftHandler callback function to the swipe event on div.box
+  $(window).on( "swipeleft", swipeleftHandler );
+  // Callback function references the event target and adds the 'swipeleft' class to it
+  function swipeleftHandler( event ){
+    instrument = (instrument + 1) % 3
+    setInstrument(instrument)
+  }
 
-  // Callback function references the event target and adds the 'swipe' class to it
-  function swipeHandler( event ){
-    console.log('swipe detected');
-    let swipe = event.special.swipe
-    let direction = swipe.handleSwipe(swipe.start,swipe.stop)
-    socket.emit('log', direction);
+  $(window).on( "swiperight", swiperightHandler );
+  // Callback function references the event target and adds the 'swipeleft' class to it
+  function swiperightHandler( event ){
+    instrument = (instrument + 2) % 3
+    setInstrument(instrument)
   }
 });
+
+function setInstrument(instrument) {
+  $('#selector').html(instruments[instrument].name);
+  $('#selector').css( "background-color", instruments[instrument].color);
+}
 
 // establish socket connection
 socket.on('connect', function() {
@@ -54,7 +84,8 @@ socket.on('connect', function() {
 
     // if acceleration is high in the negative z, set state to struck
     if (state == 'ready' && (acceleration.y) > -minimumImpact) {
-      socket.emit('phone drum message', {note: 'd4', acceleration});
+      socket.emit('log', {note: instruments[instrument].note, acceleration});
+      socket.emit('phone drum message', {note: instruments[instrument].note, acceleration});
       state = 'struck'
     }
 

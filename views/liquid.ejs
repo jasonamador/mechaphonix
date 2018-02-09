@@ -6,8 +6,10 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <video id="video" width="800" height="600" preload autoplay loop muted style="transform: scaleX(-1)"></video>
-    <canvas id="canvas" width="800" height="600" style="transform: scaleX(-1)"></canvas>
+    <div class="video-container">
+      <canvas id="canvas" style="transform: scaleX(-1)"></canvas>
+      <video id="video" preload autoplay loop muted style="transform: scaleX(-1)"></video>
+    </div>
     <script src="/js/vendor/tracking.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/vendor/Tone.js"></script>

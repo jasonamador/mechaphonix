@@ -9,13 +9,13 @@
     <title>Mechaphonix</title>
   </head>
   <body>
-    <div class="container">
+    <div id='container' class="container">
       <div>
         <h1>MECHAPHONIX<h1>
       </div>
 
-      <div id='selector' class='selector'>
-        <h1>BASS<h1>
+      <div id='selector' class='selector box'>
+        BASS
       </div>
 
       <div>
@@ -23,11 +23,15 @@
       </div>
     </div>
 
-    <script src="/js/vendor/jquerry-3.3.1.min.js"></script>
+    <script src="/js/vendor/jquery-3.3.1.min.js"></script>
+    <script src="/js/vendor/jquery.mobile-1.5.0-alpha.1.min.js"></script>
     <script src="/js/vendor/Tone.js"></script>
     <script src="/js/vendor/StartAudioContext.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/phone-drum/phone-drum-controller.js"></script>
     <script src="/phone-drum/phone-drum-synth.js"></script>
+    <script>
+      document.getElementsByClassName('container')[0].style.height = `${window.innerHeight}px`
+    </script>
   </body>
 </html>
