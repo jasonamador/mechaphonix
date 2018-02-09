@@ -11,14 +11,14 @@ for (let i = 0; i < samplerNotes.length; i++) {
 }
 
 let sampler = new Tone.Sampler({
-  'c4' : '/samples/crash.mp3',
-  'c#4' : '/samples/floor_tom.mp3',
-  'd4' : '/samples/mid_tom.mp3',
-  'd#4' : '/samples/high_tom.mp3',
-  'e4' : '/samples/hi_hat_open.mp3',
-  'f4' : '/samples/hi_hat_closed.mp3',
-  'f#4' : '/samples/snare.mp3',
-  'g4' : '/samples/kick.mp3'
+  'c4' : '/samples/tom1_long.wav',
+  'c#4' : '/samples/clap.wav',
+  'd4' : '/samples/cowbell.wav',
+  'd#4' : '/samples/hi_hat_closed.wav',
+  'e4' : '/samples/snare.wav',
+  'f4' : '/samples/kick2.mp3',
+  'f#4' : '/samples/kick.wav',
+  'g4' : '/samples/large_drum.mp3'
 }, function() {
   console.log('samples loaded');
 }).toMaster();
