@@ -10,13 +10,13 @@ window.onload = function() {
   tracking.ColorTracker.registerColor('green', (r, g, b) => {
     return (g > 100 && r < 100 && b < 100);
   });
-  tracking.ColorTracker.registerColor('red', (r, g, b) => {
-    return (g < 50 && r > 150 && b < 50);
+  tracking.ColorTracker.registerColor('white', (r, g, b) => {
+    return (g > 150 && r > 150 && b > 150);
   });
   tracking.ColorTracker.registerColor('blue', (r, g, b) => {
     return (g < 100 && r < 100 && b > 130);
   });
-  var tracker = new tracking.ColorTracker(['red', 'green', 'blue']);
+  var tracker = new tracking.ColorTracker(['white', 'green', 'blue']);
   tracking.track('#video', tracker, { camera: true });
 
   /*
@@ -30,7 +30,7 @@ window.onload = function() {
         let y = (rect.y + rect.width / 2);
         switch (rect.color) {
           case 'green' : drawGreen(x, y); break;
-          case 'red' : drawRed(x, y); break;
+          case 'white' : drawWhite(x, y); break;
           case 'blue' : drawBlue(x, y); break;
         };
         x = (canvas.width - x) / canvas.width;

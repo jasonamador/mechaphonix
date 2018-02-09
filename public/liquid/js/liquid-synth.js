@@ -26,7 +26,7 @@ let blue = {
     this.source.start();
   },
 }
-let red = {
+let white = {
   source : new Tone.DuoSynth(),
   panner : new Tone.Panner(),
   prevNote : '',
@@ -60,15 +60,15 @@ let green = {
 }
 
 blue.init();
-red.init();
+white.init();
 green.init();
 
 socket.on('liquid message', (message) => {
   if (message.blue) {
     blue.update(message.blue);
   }
-  if (message.red) {
-    red.update(message.red);
+  if (message.white) {
+    white.update(message.white);
   }
   if (message.green) {
     green.update(message.green);
