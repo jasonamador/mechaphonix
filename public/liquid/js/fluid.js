@@ -646,9 +646,9 @@ my customization
 pointers.push(new pointerPrototype());
 pointers.push(new pointerPrototype());
 pointers.push(new pointerPrototype());
-function drawRed(x, y) {
+function drawWhite(x, y) {
     pointers[0].down = true;
-    pointers[0].color = [0.8, 0.0, 0.0];
+    pointers[0].color = [0.8, 0.8, 0.8];
     pointers[0].moved = pointers[0].down;
     pointers[0].dx = (x - pointers[0].x) * 10.0;
     pointers[0].dy = (y - pointers[0].y) * 10.0;
