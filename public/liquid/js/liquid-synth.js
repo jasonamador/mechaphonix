@@ -21,7 +21,7 @@ let blue = {
     this.filter.frequency.value = message.y * 800;
   },
   init : function() {
-    this.source.volume.value = -12;
+    // this.source.volume.value = -12;
     this.source.chain(this.filter, this.panner, Tone.Master);
     this.source.start();
   },
