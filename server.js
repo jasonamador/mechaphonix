@@ -51,7 +51,7 @@ io.on('connection', function(socket){
   });
 
   socket.on('eeg message', (message) => {
-    console.log('senging eeg notes:', message.notes);
+    console.log('sending eeg notes:', message.notes);
     socket.broadcast.emit('eeg message', message);
   });
 

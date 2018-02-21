@@ -9,9 +9,14 @@ let prevGamma = 0;
 let minimumDelta = 22.5;
 let unmuted = false
 
+/*
+could be written as:
+
+
+*/
 function getNote(number) {
-  if (number > 382.5) return 'b5'
-  if (number > 360) return 'a5'
+  if (number > 382.5) return 'b4'
+  if (number > 360) return 'a4'
   if (number > 337.5) return 'g4'
   if (number > 315) return 'f4'
   if (number > 292.5) return 'e4'
