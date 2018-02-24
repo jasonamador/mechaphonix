@@ -1,11 +1,20 @@
-# Mechaphonix
-## An experimental multimedia performance suite
-The goal of this project is to enable performers to use several different brower devices to interact with a master node.js server that will send MIDI messages to a computer music software system called [ChucK](http://chuck.cs.princeton.edu/) and create visualizations.  
+# [Mechaphonix](https://mechaphonix.herokuapp.com)
+### An experimental multimedia performance tool
+Mechaphonix is a collaborative multimedia performance platform which allows users to use a number of unique control devices including the camera, accelerometer and a simple EEG to create music together in real-time over the internet.
 
-This project will have the following components:
-### The Node.js Server
-This is primarily responsible for receiving data from the peripheral controllers (phone accellerometers, camera trackers, microphone) via WebSockets (probably [socket.io](https://socket.io/)), doing some magic to them to them and emitting some MIDI that will eventually control the instruments.  It will also serve the front-end, which should be minimal.
-### The Front-End
+This experiment has following components:
+## Client Side
+### [Master](https://mechaphonix.herokuapp.com/master)
+"Master" interprets all of the [socket.io](https://socket.io) messages from any connected performers and outputs the sound using the amazing [Tone.js](http://tonejs.github.io) library which elegantly sugar coats the Web Audio API.
+
+### [MIDI](https://mechaphonix.herokuapp.com/midi)
+"MIDI" takes all MIDI signals that the browser is getting via the Web MIDI API and turns them into JSON objects that are sent to the server then broadcasted to all of the "Master"s using [socket.io](https://socket.io).
+
+### [Liquid](https://mechaphonix.herokuapp.com/liquid)
+"Liquid" uses the webcam, a great library called [tracking.js](https://trackingjs.com), and a cool WebGL liquid simulator by [PavelDoGreat](https://codepen.io/PavelDoGreat) to control three different sounds with three different colored LEDs and get some beautiful interactive visuals.  Relative coordinates of each of the tracked LEDs are broadcasted to the Masters.
+
+
+
 This will consist of a simple menu to choose what controller you are using based on what peripherals the device has available to it (accellerometer, camera, mic), and the code that will actually send the signals through the WebSocket.
 ### ChucK
 [ChucK](http://chuck.cs.princeton.edu/) is going to actually be making the noise.  All of its input will come from the MIDI that the Node server is emitting and create the sounds on the master device.  ChucK is a live coding environment, so we will have a number of synthesizers saved, but that code can be modified on the fly to create totally unique sounds.  It will also provide some visualizations.
