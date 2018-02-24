@@ -20,7 +20,9 @@ This experiment has following components:
 ### [Phone Chord](https://mechaphonix.herokuapp.com/phone-chord)
 "Phone Chord" takes input from a device with an accelerometer and a compass to convert 3D orientation into tones.  It sends raw orientation data and turns it into two note signals that it broadcasts to all Master connections.
 
-
+## Server Side
+### Just a Simple Express Server
+We created some routes to serve the client side applications, which once loaded interact with the Express.js server only through [socket.io](https://socket.io) connections.
 
 ### DIY EEG tutorials
 We made our eeg device out of a Nurosky MindFlex toy and an arduino by following this tutorial: http://www.frontiernerds.com/brain-hack
