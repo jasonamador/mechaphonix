@@ -1,10 +1,10 @@
 const SerialPort = require('serialport');
 const Readline = SerialPort.parsers.Readline;
 // set the serial port bellow to whatever port your arduino is on
-const port = new SerialPort('/dev/cu.usbmodem1451');
+const port = new SerialPort('/dev/tty.usbmodem1431');
 const parser = new Readline();
 // set the host bellow to whatever port your server is listening on
-const socket = require('socket.io-client')('http://localhost:3000');
+const socket = require('socket.io-client')('http://10.8.65.139:3000');
 
 function getNote(number) {
   if (number > 8000000) return 'f3'
@@ -64,7 +64,7 @@ socket.on('connect', function(){
 
       console.log('sending notes:', notes);
 
-      socket.emit('eeg input', {
+      socket.emit('eeg message', {
         notes: notes
       })
     }

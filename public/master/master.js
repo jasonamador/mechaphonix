@@ -1,3 +1,3 @@
 var socket = io();
 
-Tone.Transport.start();
+// Tone.Transport.start();

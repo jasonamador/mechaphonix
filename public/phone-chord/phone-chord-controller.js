@@ -3,7 +3,9 @@ const socket = io()
 const context = new AudioContext();
 // var autoFilter = new Tone.AutoFilter("2n").toMaster().start();
 var tremolo = new Tone.Tremolo(9, 0.75).toMaster().start();
-var oscillator = new Tone.Oscillator().connect(tremolo).start();
+var dist = new Tone.Distortion(0.8).toMaster();
+var oscillator = new Tone.Oscillator().connect(tremolo).connect(dist).start();
+
 
 // set previous variables and minimum degree change needed to emit a new message
 let prevAlpha = 180;
@@ -76,9 +78,11 @@ socket.on('connect', function() {
         Math.abs(gamma + 180 - prevGamma) < minimumDelta)
     ) return
 
-    tremolo.frequency.value = Math.floor((alpha + 200) * 3.57)
+    tremolo.frequency.value = Math.floor(gamma + 90);
 
-    oscillator.frequency.value = Math.floor((Math.abs(gamma) + 92) * .1)
+    oscillator.frequency.value = alpha / 90 + 1;
+
+    dist.distortion.value = Math.floor((beta - 90) / 180);
 
 
     // set the previous values to the current values
