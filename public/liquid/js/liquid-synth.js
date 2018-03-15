@@ -21,11 +21,12 @@ let blue = {
     this.filter.frequency.value = message.y * 800;
   },
   init : function() {
-    // this.source.volume.value = -12;
+    this.source.volume.value = -12;
     this.source.chain(this.filter, this.panner, Tone.Master);
     this.source.start();
   },
 }
+
 let white = {
   source : new Tone.DuoSynth(),
   panner : new Tone.Panner(),
@@ -42,6 +43,7 @@ let white = {
     this.source.chain(this.panner, Tone.Master);
   },
 }
+
 let green = {
   source : new Tone.DuoSynth(),
   panner : new Tone.Panner(),
